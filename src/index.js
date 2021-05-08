@@ -281,7 +281,6 @@ module.exports = class Reader extends Component {
       // data array is not 0.
       const checkImage = () => {
         var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        console.log("!", imageData.data[0]);
         if (imageData.data[0] !== 0) {
           // Send data to web-worker
           this.worker.postMessage(imageData);
